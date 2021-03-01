@@ -25,7 +25,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-- grant the ubuntu user rights to the jenkins directory
+- grant the ubuntu user rights to the jenkins directory and run docker
 
 
 ## Notes
