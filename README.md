@@ -3,7 +3,7 @@ https://www.udemy.com/course/jenkins-from-zero-to-hero/
 
 ## Set up for Ubuntu 
 
-- install docker
+install docker
 https://docs.docker.com/engine/install/ubuntu/
 
 - install docker-compose
