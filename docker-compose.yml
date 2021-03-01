@@ -2,17 +2,29 @@ version: '3'
 services:
   jenkins:
     container_name: jenkins
-    image: jenkins-docker
-    restart: always
+    image: jenkins-ansible
     build:
-      context: pipeline
+      context: jenkins-ansible
     ports:
       - "8080:8080"
     volumes:
-      - jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
+      - "$PWD/jenkins_home:/var/jenkins_home"
     networks:
       - net
+
+  # jenkins:
+  #   container_name: jenkins
+  #   image: jenkins-docker
+  #   restart: always
+  #   build:
+  #     context: pipeline
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - jenkins_home:/var/jenkins_home
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   networks:
+  #     - net
 
   remote_host:
     container_name: remote-host
@@ -23,27 +35,27 @@ services:
     networks:
       - net
 
-  db_host:
-    container_name: db
-    image: mysql:5.7
-    restart: always
-    environment:
-      - "MYSQL_ROOT_PASSWORD=1234"
-    volumes:
-      - db_data:/var/lib/mysql
-    networks:
-      - net
+  # db_host:
+  #   container_name: db
+  #   image: mysql:5.7
+  #   restart: always
+  #   environment:
+  #     - "MYSQL_ROOT_PASSWORD=1234"
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+  #   networks:
+  #     - net
 
-  web:
-    container_name: web
-    image: ansible-web
-    restart: always
-    build:
-      context: jenkins-ansible/web/
-    ports:
-      - "80:80"
-    networks:
-      - net
+  # web:
+  #   container_name: web
+  #   image: ansible-web
+  #   restart: always
+  #   build:
+  #     context: jenkins-ansible/web/
+  #   ports:
+  #     - "80:80"
+  #   networks:
+  #     - net
 
   # git:
   #   container_name: git-server
@@ -61,7 +73,7 @@ services:
     
 volumes:
   jenkins_home:
-  db_data:
+  # db_data:
 
 networks:
   net:

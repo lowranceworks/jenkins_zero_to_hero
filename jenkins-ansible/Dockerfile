@@ -1,9 +1,12 @@
 FROM jenkins/jenkins
 
+COPY remote-key var/jenkins_home/ansible/remote-key
+
 USER root
 
-RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
-    python get-pip.py && \
-    pip install ansible --upgrade
+RUN apt update
+RUN apt-get install -y python3
+RUN apt-get install -y ansible 
 
 USER jenkins
+
