@@ -182,3 +182,23 @@ cd ansible/
 ssh -i remote-key remote_user@remote_host
 clear
 exit
+cd $home/ansible
+cd $home
+cd ansible/
+ls
+clear
+ansible -i hosts -m ping test1
+ping remote_host
+ssh -i remote-key remote_user@remote_host
+export ANSIBLE_SSH_ARGS='-o ControlMaster=no'
+ansible -i hosts -m ping test1
+ls
+vi hosts 
+cat hosts
+ls
+exit
+ansible -i hosts -m ping test1
+cd $home
+cd ansible/
+ansible -i hosts -m ping test1
+exit
