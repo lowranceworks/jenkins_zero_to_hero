@@ -3,28 +3,28 @@ https://www.udemy.com/course/jenkins-from-zero-to-hero/
 
 ## Set up for Ubuntu 
 
-install docker
+- install docker
 https://docs.docker.com/engine/install/ubuntu/
 
 - install docker-compose
 https://docs.docker.com/compose/install/
 
-- enable docker to start up after reboot 
+enable docker to start up after reboot 
 ```
 sudo systemctl enable docker 
 ```
 
-- grant the ubuntu user rights to run docker
+grant the ubuntu user rights to run docker
 ```
 sudo usermod -aG docker ubuntu 
 ````
 
-- clone repository 
+clone repository 
 ```
 git clone https://github.com/lowranceworks/jenkins_zero_to_hero.git
 ```
 
-- grant the ubuntu user rights to the jenkins directory
+grant the ubuntu user rights to the jenkins directory
 ```
 sudo chown 1000:1000 jenkins_zero_to_hero -R
 ```
