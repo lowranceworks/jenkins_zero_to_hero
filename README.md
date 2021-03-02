@@ -52,8 +52,7 @@ rm /var/jenkins_home/.ssh/known_hosts
 
 
 ## Notes
-Environment variables can be used in any of your jobs \
-test
+Environment variables can be used in any of your jobs
 - https://www.jenkins.io/doc/pipeline/tour/environment/
  
 
