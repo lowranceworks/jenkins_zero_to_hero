@@ -1,7 +1,7 @@
 # Jenkins, From Zero To Hero
 https://www.udemy.com/course/jenkins-from-zero-to-hero/
 
-## Set up for Ubuntu 
+## Project set up for Ubuntu 
 
 - install docker
 https://docs.docker.com/engine/install/ubuntu/
@@ -35,6 +35,12 @@ grant the ubuntu user rights to the jenkins directory
 ```
 sudo chown 1000:1000 jenkins_zero_to_hero -R
 ```
+
+## How to config local DNS name to ip address (Windows)
+
+- edit C:\Windows\System32\drivers\etc
+- add a line containing the ip address of the server and the name you want to assign it
+(e.g. 192.168.50.159 jenkins.local )
 
 ## Troubleshooting
 
