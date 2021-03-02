@@ -16,8 +16,14 @@ sudo systemctl enable docker
 
 grant the ubuntu user rights to run docker
 ```
-sudo usermod -aG docker ubuntu 
-````
+sudo usermod -aG docker ${USER}
+```
+
+sign out and sign back in for changes to go into affect 
+```
+sudo su
+su ${USER}
+```
 
 clone repository 
 ```
