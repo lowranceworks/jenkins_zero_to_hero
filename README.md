@@ -19,9 +19,11 @@ grant the ubuntu user rights to run docker
 sudo usermod -aG docker ${USER}
 ```
 
-restart docker, sign out and sign back in to ensure that the changes go into effect 
+update docker.sock permissions, restart docker, sign out and sign back in to ensure that the changes go into effect 
 ```
-sudo systemctl restart docker
+sudo chmod 666 /var/run/docker.sock && \ 
+sudo systemctl restart docker && \ 
+exit 
 ```
 
 clone repository 
