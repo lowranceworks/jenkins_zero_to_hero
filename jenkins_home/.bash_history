@@ -202,3 +202,19 @@ cd $home
 cd ansible/
 ansible -i hosts -m ping test1
 exit
+ssh remote_user@remote-host
+exit
+docker ps
+docker version
+clear
+cd $home
+cd ansible/
+ssh -i remote-key remote_user@remote_host
+ssh -i remote-key remote_user@remote_host
+ls -ltr
+chmod 600 remote-key 
+ls -ltr
+ssh -i remote-key remote_user@remote_host
+ssh -i remote-key remote_user@remote_host
+pwd
+exit
