@@ -52,8 +52,8 @@ rm /var/jenkins_home/.ssh/known_hosts
 
 
 ## Notes
-Environment variables can be used in any of your jobs
-- https://www.jenkins.io/doc/pipeline/tour/environment/
+Environment variables can be used in any of your jobs \
+https://www.jenkins.io/doc/pipeline/tour/environment/
  
 
 - Private keys should NEVER be uploaded to a repository. In this case it doesn't matter because this is just a lab for learning and the keys are for internal containers, not EC2 instances. 
