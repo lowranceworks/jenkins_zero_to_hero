@@ -82,11 +82,12 @@ unable to ssh into remote_host container
 ```
 rm /var/jenkins_home/.ssh/known_hosts
 ```
-Githooks throwing 403 forbidden errors
+Githooks throwing 403 forbidden errors 
 - There's a chance your githooks won't trigger correctly with 403 erros. This is due to a jenkins major upgrade, which modified something called CSRF in Jenkins, that protects you against DOS attacks.
 - https://jenkins.io/doc/upgrade-guide/2.176/#SECURITY-626
 
-- Resolution: Install a plugin named Strict Crumb Issue
+Resolution:
+* Install a plugin named Strict Crumb Issue
 * Go to Manage Jenkins -> Configure Global Security -> CSRF Protection.
 * Select Strict Crumb Issuer.
 * Click on Advanced.
