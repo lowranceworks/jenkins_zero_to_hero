@@ -34,6 +34,8 @@ html {
   --primary-active: #095683;
   --danger-hover: #eb383b;
   --danger-active: #b50003;
+  --weather-icon-color: var(--primary);
+  --unstable-build-icon-color: var(--notification-warning-icon-color);
   --background: var(--white);
   --line-green: #acb;
   --medium-translucent: rgba(255, 255, 255, 0.75);
@@ -1633,6 +1635,12 @@ textarea.rich-editor {
   padding: 0.5em;
 }
 /* ========================= D&D support in heterogenous/repeatable lists = */
+.hetero-list-container .has-help {
+  display: flex;
+}
+.hetero-list-container .has-help .dd-handle {
+  flex: 1;
+}
 .hetero-list-container .dd-handle,
 .repeated-container .dd-handle {
   cursor: move;
@@ -1837,6 +1845,38 @@ table.progress-bar.red td.progress-bar-done {
     visibility: hidden;
   }
 }
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    transform: rotate(360deg) translateZ(0);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    transform: rotate(360deg) translateZ(0);
+  }
+}
+@-webkit-keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 /* ========================= YUI dialog ========================= */
 /* discovered this margin fix by a trial and error. This can very well be a totally wrong fix, or perhaps updating
  to the latest YUI will fix this? */
@@ -2033,19 +2073,23 @@ body.no-sticker #bottom-sticker {
   display: none;
 }
 /* see the Icon class for the definition of these CSS classes */
-.icon-sm {
+.icon-sm,
+svg.icon-sm {
   width: 16px;
   height: 16px;
 }
-.icon-md {
+.icon-md,
+svg.icon-md {
   width: 24px;
   height: 24px;
 }
-.icon-lg {
+.icon-lg,
+svg.icon-lg {
   width: 32px;
   height: 32px;
 }
-.icon-xlg {
+.icon-xlg,
+svg.icon-xlg {
   width: 48px;
   height: 48px;
 }
@@ -2276,10 +2320,15 @@ body.no-sticker #bottom-sticker {
   color: black;
   color: var(--menu-text-color);
   font-weight: normal;
+  display: flex;
+  align-items: center;
 }
 #jenkins.yui-skin-sam .yuimenuitemlabel:visited {
   color: black;
   color: var(--menu-text-color);
+}
+#jenkins.yui-skin-sam .yuimenuitemlabel span {
+  display: inline-block;
 }
 #jenkins.yui-skin-sam .yuimenu .bd {
   border-color: #ccc;
@@ -2414,6 +2463,136 @@ rgba(0, 0, 0, 0.3);
 .icon-xlarge {
   width: 64px;
   height: 64px;
+}
+/*****
+ * Build status icons
+ *****/
+.animated-spin,
+.icon-blue-anime,
+.icon-red-anime {
+  will-change: transform;
+}
+.icon-blue,
+.icon-blue-anime {
+  color: #138347;
+  color: var(--success);
+  fill: #138347;
+  fill: var(--success);
+  opacity: 1;
+}
+.icon-blue .svg-icon,
+.icon-blue-anime .svg-icon {
+  color: #138347;
+  color: var(--success);
+  fill: #138347;
+  fill: var(--success);
+}
+.icon-red,
+.icon-red-anime {
+  color: #cc0003;
+  color: var(--danger);
+  fill: #cc0003;
+  fill: var(--danger);
+  opacity: 1;
+}
+.icon-red .svg-icon,
+.icon-red-anime .svg-icon {
+  color: #cc0003;
+  color: var(--danger);
+  fill: #cc0003;
+  fill: var(--danger);
+}
+.icon-yellow,
+.icon-yellow-anime {
+  color: #ff9800;
+  color: var(--unstable-build-icon-color);
+  fill: #ff9800;
+  fill: var(--unstable-build-icon-color);
+  opacity: 1;
+}
+.icon-yellow .svg-icon,
+.icon-yellow-anime .svg-icon {
+  color: #ff9800;
+  color: var(--unstable-build-icon-color);
+  fill: #ff9800;
+  fill: var(--unstable-build-icon-color);
+}
+.icon-aborted,
+.icon-aborted-anime {
+  color: #333;
+  color: var(--black);
+  fill: #333;
+  fill: var(--black);
+  opacity: 1;
+}
+.icon-aborted .svg-icon,
+.icon-aborted-anime .svg-icon {
+  color: #333;
+  color: var(--black);
+  fill: #333;
+  fill: var(--black);
+}
+.icon-disabled,
+.icon-disabled-anime {
+  color: #333;
+  color: var(--black);
+  fill: #333;
+  fill: var(--black);
+  opacity: 0.5;
+}
+.icon-disabled .svg-icon,
+.icon-disabled-anime .svg-icon {
+  color: #333;
+  color: var(--black);
+  fill: #333;
+  fill: var(--black);
+}
+.icon-nobuilt,
+.icon-nobuilt-anime {
+  color: #0b6aa2;
+  color: var(--primary);
+  fill: #0b6aa2;
+  fill: var(--primary);
+  opacity: 1;
+}
+.icon-nobuilt .svg-icon,
+.icon-nobuilt-anime .svg-icon {
+  color: #0b6aa2;
+  color: var(--primary);
+  fill: #0b6aa2;
+  fill: var(--primary);
+}
+[class*="icon-health-"] {
+  color: #0b6aa2;
+  color: var(--weather-icon-color);
+  fill: #0b6aa2;
+  fill: var(--weather-icon-color);
+}
+.build-status-icon__wrapper {
+  display: inline-block;
+  position: relative;
+}
+.build-status-icon__outer {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+.build-status-icon__outer .svg-icon {
+  width: 100%;
+  height: 100%;
+}
+.icon-blue-anime .build-status-icon__outer .svg-icon,
+.icon-red-anime .build-status-icon__outer .svg-icon,
+.icon-yellow-anime .build-status-icon__outer .svg-icon,
+.icon-aborted-anime .build-status-icon__outer .svg-icon,
+.icon-disabled-anime .build-status-icon__outer .svg-icon,
+.icon-nobuilt-anime .build-status-icon__outer .svg-icon {
+  -webkit-animation: spin-reverse 2s linear infinite;
+          animation: spin-reverse 2s linear infinite;
 }
 .button-link {
   color: #0b6aa2;
@@ -3914,7 +4093,8 @@ table.bigtable.sortable span.sortarrow {
   background-color: #eaeff2;
   background-color: var(--manage-option-bg-color--active);
 }
-.manage-option .icon {
+.manage-option .icon,
+.manage-option .icon-xlg {
   display: block;
   float: left;
   position: relative;
@@ -4041,6 +4221,49 @@ table.bigtable.sortable span.sortarrow {
 .empty-state-section-list li {
   list-style: none;
   margin-bottom: 1rem;
+}
+.am-badge,
+.plugin-manager__category-label:link,
+.plugin-manager__category-label:visited {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border: 1px solid #9ba7af;
+  border: 1px solid var(--plugin-manager-category-link-border-color);
+  background-color: #fbfbfb;
+  background-color: #f8f8f8;
+  background-color: var(--plugin-manager-category-link-bg-color);
+  color: #333;
+  color: #333;
+  color: var(--plugin-manager-category-text-color);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0 0.5rem;
+  margin: 0 0.25rem 0.25rem 0;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: all 0.15s ease-in-out;
+}
+.plugin-manager__category-label:link:hover,
+.plugin-manager__category-label:visited:hover,
+.plugin-manager__category-label:link:focus,
+.plugin-manager__category-label:visited:focus,
+.plugin-manager__category-label:link:active,
+.plugin-manager__category-label:visited:active {
+  background-color: #f2f2f2;
+  background-color: #f2f2f2;
+  background-color: var(--plugin-manager-category-link-bg-color--hover);
+  border-color: #333;
+  border-color: #333;
+  border-color: var(--plugin-manager-category-link-border-color--hover);
+  color: #333;
+  color: #333;
+  color: var(--plugin-manager-category-link-color--hover);
+}
+.am-badge {
+  display: inline;
 }
 
 

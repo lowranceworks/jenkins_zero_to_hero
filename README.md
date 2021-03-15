@@ -73,8 +73,57 @@ Trigger jobs from external sources \
 - Create a user and configure permissions
 - Dashboard -> Manage Jenkins -> Manage users -> Create user -> Manage Jenkins -> Manage and Assign Roles -> Manage Roles -> Create new rule (trigger-jobs) -> Grant rights: (Overall read) (Job Read and Build) -> Save -> Assign trigger-jobs role to user -> Save 
 
+## Jenkins & Email
+If you select 'install suggested plugins' while setting up jenkins, you'll find a plugin called mailer in Plugin Manager 
+Can be configured Amazon SES or a gmail account \
+make sure port 465 is open otherwise you will receive an error during setup \ 
+\
 
- 
+**Features**
+- email notifications when builds fail
+- email notifications when builds are successful again after failure 
+
+## Jenkins & Maven
+Jenkins & Maven work well together \
+We will use Jenkins & Maven together for continuous integration \
+
+**Objectives**
+ - create a CI solution for when a developers commits to a particular branch
+
+ 1. install the maven integration plugin 
+ 2. ensure the git client & git plugin are installed (comes with suggested plugins)
+ 3. create a new job that will clone this git repo using jenkins: https://github.com/jenkins-docs/simple-java-maven-app 
+ - when you run the build, it will successfully clone the repository in the workspace (everything happens in the workspace) 
+ - /var/jenkins_home/workspace/maven-job 
+ 4. build a jar using maven and the code that you've cloned
+ - define a maven installation in jenkins (manage -> global tool configuration -> add maven -> save)
+ - go into the maven job -> add a build step -> Invoke top-level Maven targets -> select the maven tool you added ->
+ 5. 
+
+ ## Introduction Jenkins & DSL
+**Create jobs with code** \
+
+install the Job DSL plugin 
+
+**what is a seed job?** 
+- a job that creates jobs 
+- the seed job can be thought of as the parent job for all of the jobs that will be created 
+
+**how do we create a seed job?** \ 
+after installing the Job DSL plugin, take the following steps: \
+create a new job -> select add build step -> select Process Job DSLs 
+- you will either point to a DSL script or write the DSL script inside the module 
+- the script is written in groovy
+
+**understand the DSL structure** \
+we will create our first DSL job \
+
+**DSL documentation**
+https://jenkinsci.github.io/job-dsl-plugin/ 
+
+
+
+
 ## Troubleshooting
 
 unable to ssh into remote_host container

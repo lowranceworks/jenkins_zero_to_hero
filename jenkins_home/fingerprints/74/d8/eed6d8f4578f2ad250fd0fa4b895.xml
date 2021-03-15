@@ -1,0 +1,13 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2021-03-09 21:23:02.64 UTC</timestamp>
+  <md5sum>74d8eed6d8f4578f2ad250fd0fa4b895</md5sum>
+  <fileName>Credential id=git_user name=josh/******</fileName>
+  <usages>
+    <entry>
+      <string>maven-job</string>
+      <ranges>14-18</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

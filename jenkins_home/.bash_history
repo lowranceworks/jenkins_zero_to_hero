@@ -218,3 +218,69 @@ ssh -i remote-key remote_user@remote_host
 ssh -i remote-key remote_user@remote_host
 pwd
 exit
+ls
+cd home
+ls
+cd $HOME
+ls
+clear
+..
+ll
+ls
+ls -ltr
+clear
+exit
+ls -ltr
+cd #HOME
+cd $HOME
+ls -ltr
+ls
+ssh -i secret.key remote_user@remote_host
+clear
+exit
+cd /var/jenkins_home/
+ls
+ll
+ls -ltr
+cd work
+cd workspace
+ls
+clear
+ll
+sudo apt install ll
+ls
+cd maven-job/
+ls
+ls -ltr
+ls -ltrh
+pwd
+ls
+cd target/
+ls
+ls -l
+ls ../
+java -jar /var/jenkins_home/workspace/maven-job/target/my-app-1.0-SNAPSHOT.jar
+cd ..
+java -jar /var/jenkins_home/workspace/maven-job/target/my-app-1.0-SNAPSHOT.jar
+sudo apt install diodon
+exit
+ping git
+curl git:80
+exit
+ls /etc/
+ls /etc/ansible/
+
+ls /etc/ansible/
+ls /etc/ansible/hosts 
+clear
+exit
+cd $home
+ls
+ls ansible/people.yml 
+ls ansible/people.yml 
+ls -a
+pwd
+clear
+cd ansible/
+ls -a
+exit
