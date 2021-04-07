@@ -359,7 +359,7 @@ to fix this, exit the container and run `sudo chown 1000:1000 /var/run/docker.so
 review the Jenkinsfile `cat pipeline/Jenkinsfile` \
 this Jenkinfile defines 4 stages
 
-### Build: Create a Jar for your Maven app using docker
+### Build: Create a Jar for your aven app using docker
 
 A few things need to happen: 
 - build\run a docker container using the maven alpine image  
@@ -516,86 +516,16 @@ review the script:
 ```
 ls -l ./jenkins/test/maven.sh && cat ./jenkins/test/maven.sh
 ```
+
 ### add your test script to the jenkinsfile 
-
-.
-
-
-## 15. CI/CD + Jenkins Pipeline + Docker + Maven
-
-### Learn how to install Docker inside of a Docker Container
 . \
-. 
-```
 .
-```
-
-### Define the steps for your Pipeline
-. \
-. 
-```
-.
-```
-
-### Build: Create a Jar for your maven App using Docker
-. \
-. 
-```
-.
-```
-
-### Build: write a bash scirpt to automate the JAr creation
-. \
-. 
-```
-.
-```
-
-### Build: Create a Docker Compose file to uatomate the image build process
-. \
-. 
-```
-.
-```
-
-### Build: Write a bash script to automate the Docker Image creation process
-. \
-. 
-```
-.
-```
-
-### Build: Add your scripts to the Jenkinsfile
-. \
-. 
-```
-.
-```
-
-### Test: Learn how to test your code using Maven and Docker 
-. \
-. 
-```
-.
-```
-
-### Test: Create a bash script to automate the test process
-. \
-. 
 ```
 .
 ```
 
 
-### Test: Add your test script to Jenkinsfile
-. \
-. 
-```
-.
-```
-
-
-### Create a remote machine to deploy yuour containerized app
+### Create a remote machine to deploy your containerized app
 . \
 . 
 ```
