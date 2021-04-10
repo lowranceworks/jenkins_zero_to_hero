@@ -57,19 +57,19 @@ services:
   #   networks:
   #     - net
 
-  git:
-    container_name: git-server
-    image: 'gitlab/gitlab-ce:latest'
-    restart: always
-    hostname: 'gitlab.local'
-    ports:
-      - '8088:80'
-    volumes:
-      - '$GITLAB_HOME/gitlab/config:/etc/gitlab'
-      - '$GITLAB_HOME/gitlab/logs:/var/log/gitlab'
-      - '$GITLAB_HOME/gitlab/data:/var/opt/gitlab'
-    networks:
-      - net
+  # git:
+  #   container_name: git-server
+  #   image: 'gitlab/gitlab-ce:latest'
+  #   restart: always
+  #   hostname: 'gitlab.local'
+  #   ports:
+  #     - '8088:80'
+  #   volumes:
+  #     - '$GITLAB_HOME/gitlab/config:/etc/gitlab'
+  #     - '$GITLAB_HOME/gitlab/logs:/var/log/gitlab'
+  #     - '$GITLAB_HOME/gitlab/data:/var/opt/gitlab'
+  #   networks:
+  #     - net
     
 volumes:
   jenkins_home:
