@@ -1,0 +1,11 @@
+Started by user [8mha:////4HoC9pfK79y9WHjq4C3una1gSvA7Gi87OpdOvLtE15S4AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9rNS87My8YgDGtiJjwgAAAA==[0mjenkins
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/ENV
+[ENV] $ /bin/sh -xe /tmp/jenkins5784934872627105327.sh
++ echo
+
++ echo1
+/tmp/jenkins5784934872627105327.sh: 3: /tmp/jenkins5784934872627105327.sh: echo1: not found
+Build step 'Execute shell' marked build as failure
+Sending e-mails to: joshuajlowrance@gmail.com
+Finished: FAILURE

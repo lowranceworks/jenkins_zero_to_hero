@@ -1,0 +1,21 @@
+commit 56b5b33e60cbe6dbc47076e47c707329b66e9655
+tree 44872bcc3ef31fd839490f6e29c28375ddb1a2af
+parent 0c1df9568673ff95c110610568115daaab24eec0
+author josh <josh@josh.com> 2021-03-09 15:55:58 -0600
+committer josh <josh@josh.com> 2021-03-09 15:55:58 -0600
+
+    update
+
+
+:100644 100644 40efacc879fb31a44b5f9bbc5b2fabb3c427b614 409e51f6a6f853e05c536fdb541f9a9345c01ffe M	README.md
+commit 0c1df9568673ff95c110610568115daaab24eec0
+tree f98f9b838f653c34bf5b45421433f49b020d3d81
+parent 2162ce56a4f657869c972fd4c711f04f440d2ee8
+author josh <josh@josh.com> 2021-03-09 15:43:17 -0600
+committer josh <josh@josh.com> 2021-03-09 15:43:17 -0600
+
+    testing git hook trigger
+
+
+:100644 100644 5a6d57214d17ba7484046928cf2e933ec550b50a 2d908bcc3eacb38daa90dddbe5ae3422981cf0a8 M	src/main/java/com/mycompany/app/App.java
+:100644 100644 908bac851aef9be99dcc57a0efb36dc514d4e5ca 79a590d82884068229843201d185582296afd864 M	src/test/java/com/mycompany/app/AppTest.java
