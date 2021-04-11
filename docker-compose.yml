@@ -8,7 +8,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - "$PWD/jenkins_home:/var/jenkins_home"
+      - "./jenkins_home:/var/jenkins_home"
     networks:
       - net
 
@@ -26,14 +26,14 @@ services:
   #   networks:
   #     - net
 
-  remote_host:
-    container_name: remote-host
-    image: remote-host
-    restart: always
-    build:
-      context: centos
-    networks:
-      - net
+  # remote_host:
+  #   container_name: remote-host
+  #   image: remote-host
+  #   restart: always
+  #   build:
+  #     context: centos
+  #   networks:
+  #     - net
 
   # db_host:
   #   container_name: db

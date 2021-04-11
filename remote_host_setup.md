@@ -24,3 +24,8 @@ sudo systemctl enable docker
 sudo usermod -a -G docker ec2-user
 logout
 ```
+
+connect to ec2 via ssh:
+```
+
+```
